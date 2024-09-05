@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Activos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <h1>Gestión de Activos</h1>
+  </header>
+  <div id="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#" onclick="fetchData('inicio')">Inicio</a>
+    <a href="#" onclick="fetchData('colaboradores')">Colaboradores</a>
+    <a href="#" onclick="fetchData('computadores')">Computadores</a>
+    <a href="#" onclick="fetchData('mouse')">Mouse</a>
+    <a href="#" onclick="fetchData('teclados')">Teclados</a>
+    <a href="#" onclick="fetchData('celulares')">Celulares</a>
+    <a href="#" onclick="fetchData('simcar')">SIMCAR</a>
+  </div>
+  <main id="main">
+    <div id="app">
+      <!-- Aquí irá el contenido dinámico generado por JavaScript -->
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("sidenav").style.left = "0";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("sidenav").style.left = "-250px";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+  </script>
+</body>
+</html>
