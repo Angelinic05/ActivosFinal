@@ -7,56 +7,83 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Sidenav styles */
+#sidenav {
+    height: 100%;
+    width: 60px; /* Initially only show icons */
+    position: fixed;
+    left: -2px; /* Initially hidden */
+    background-color: #000000; /* Slightly lighter background */
+    overflow-x: hidden;
+    transition: 0.3s ease;
+    padding-top: 0px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1;
+    
+}
 
+#sidenav.open {
+    width: 250px; /* Width when expanded */
+    left: 0;
+}
 
+#sidenav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px; /* Font size for icons and text */
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#sidenav a .icon {
+    font-size: 24px; /* Size of icons */
+    margin-right: 10px;
+    transition: margin-right 0.3s ease;
+}
+
+#sidenav a i {
+    display: flex;
+    justify-content: center;
+}
+
+#sidenav a .text {
+    display: none; /* Hide text initially */
+}
+
+#sidenav.open a .text {
+    display: inline; /* Show text when expanded */
+}
+
+#sidenav a:hover, #sidenav a.active {
+    color: #fff;
+    background-color: #575757; /* Highlight background on hover */
+}
+
+#sidenav .closebtn {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Animation for open and close button */
 .openbtn {
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     position: absolute;
-    left: 20px;
-    top: 15px;
+    left: 10px;
+    top: 10px;
     color: #fff;
     border: none;
     background: none;
 }
 
-#sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px; /* Inicialmente escondido */
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    z-index: 1;
-}
-
-#sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-#sidenav a:hover {
-    color: #f1f1f1;
-}
-
-#sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: #fff;
-}
-
 #main {
-    transition: margin-left .3s;
+    transition: margin-left .3s ease;
     padding: 16px;
     margin-left: 0;
 }
@@ -70,8 +97,8 @@ body {
 }
 
 header {
-    transition: margin-left .3s;
-    background-color: #000000;
+    transition: margin-left .3s ease;
+    background-color: #000;
     color: #8b11f2;
     padding: 15px;
     position: relative;
@@ -111,5 +138,5 @@ li {
 
 @media screen and (max-height: 450px) {
     #sidenav {padding-top: 15px;}
-    #sidenav a {font-size: 18px;}
+    #sidenav a {font-size: 16px;}
 }
